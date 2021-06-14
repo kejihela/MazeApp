@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Maze Traversal</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet1.css">
+    <style>
+        div {
+            background-image: url('maze7.jpg');
+        }
+    </style>
+</head>
+<body>
+    <div>Maze Traversal</div>
+    <div>CLICK on reset button to reset the wall</div>
+    <div>CLICK on solve button to solve the maze </div>
+    <div><button onclick="maze.reset();">RESET</button></div>
+    <div><button onclick="maze.solve();">SOLVE</button></div>
+    <div id="grid"></div>
+    <script src="Script1.js"></script>
+    <script>
+        window.maze = new Maze({
+            gridElement: document.getElementById('grid'),
+            gridSize: new Point(30, 15),
+            blockSize: 20,
+            onSolved: function () {
+                setTimeout(function () { alert('A maze ing!'); }, 200);
+            }
+        });
+        maze.reset();
+    </script>
+</body>
+</html>
